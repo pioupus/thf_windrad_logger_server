@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
-./receive_mqtt_and_save.py
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+$SCRIPTPATH./receive_mqtt_and_save.py
