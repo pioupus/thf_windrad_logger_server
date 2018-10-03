@@ -83,7 +83,7 @@ mqtt_client.on_message = on_message
 
 
 my_env = os.environ.copy()    
-influx_client = InfluxDBClient('localhost', 8086, 'influx_user', ""my_env["INFLUX_USER_PASSWORD"], INFLUX_DB_NAME)
+influx_client = InfluxDBClient('localhost', 8086, 'influx_user', my_env["INFLUX_USER_PASSWORD"], INFLUX_DB_NAME)
 #influx_client = InfluxDBClient('localhost', 8086, 'influx_user', "", INFLUX_DB_NAME)
 
 mqtt_publish_result = mqtt_client.publish("enerlyzer/live/pwr", "test", qos=2)

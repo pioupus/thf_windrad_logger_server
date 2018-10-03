@@ -25,4 +25,5 @@ sudo -u enerlyzer_receiver bash << EOF
 cd /home/enerlyzer_receiver/thf_windrad_logger_server/update/
 ./do_update.py
 ./run_run_once_files.py
+./install_services.sh
 EOF
