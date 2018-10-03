@@ -23,7 +23,7 @@ def on_message(client, userdata, msg):
    # print("length: "+str(len(msg_hex)))
     protobuf_dataset = protobuf_logger_pb2.dataset()
     protobuf_dataset.ParseFromString(msg.payload)
-    print(protobuf_dataset)
+    #print(protobuf_dataset)
     
     influx_data_set = [{
         "measurement": "powerdata",
