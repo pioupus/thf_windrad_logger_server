@@ -9,7 +9,7 @@ fi
 
 
 
-for filename_path in ../etc/systemd/system/*.sh; do
+for filename_path in ../etc/systemd/system/*.service; do
     #echo $filename | sed 's:.*/::'
     file_name=$(echo $filename_path | sed 's:.*/::')
     
