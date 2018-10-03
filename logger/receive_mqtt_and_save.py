@@ -20,10 +20,10 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     msg_hex = [elem.encode("hex") for elem in msg.payload]
     #print(msg.topic + " " + str(msg_hex))
-    print("length: "+str(len(msg_hex)))
+   # print("length: "+str(len(msg_hex)))
     protobuf_dataset = protobuf_logger_pb2.dataset()
     protobuf_dataset.ParseFromString(msg.payload)
-    print(protobuf_dataset)
+  #  print(protobuf_dataset)
      
     
     influx_data_set =     [{
