@@ -11,6 +11,7 @@ read -s -p "Enter a new password for $USER_NAME: " PASS1
 read -s -p "Repeat password for $USER_NAME: " PASS2
 
 if [ "$PASS1" = "$PASS2" ]; then
+    echo -e "$PASS1\n$PASS1" | passwd $USER_NAME
     echo MY_PASSWORD=$PASS1 >> /home/$USER_NAME/enerlyzer_receiver.env
     echo INFLUX_USER_PASSWORD=`pwgen -N 1` >> /home/$USER_NAME/enerlyzer_receiver.env
 
