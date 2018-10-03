@@ -23,10 +23,9 @@ def on_message(client, userdata, msg):
    # print("length: "+str(len(msg_hex)))
     protobuf_dataset = protobuf_logger_pb2.dataset()
     protobuf_dataset.ParseFromString(msg.payload)
-  #  print(protobuf_dataset)
-     
+    print(protobuf_dataset)
     
-    influx_data_set =     [{
+    influx_data_set = [{
         "measurement": "powerdata",
         "time": datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f'),
         "fields": {
@@ -69,13 +68,13 @@ def on_message(client, userdata, msg):
             "cpu_temperature":  protobuf_dataset.cpu_temperature,
             "coin_cell_mv":  protobuf_dataset.coin_cell_mv,
             "energy_Wh": protobuf_dataset.energy_Wh,
-            "energy_start": protobuf_dataset.energy_acquisition_start,
+            "energy_start": protobuf_dataset.energy_start,
             "used_storage_percent:": protobuf_dataset.used_storage_percent
             
         }
     }]
-        
     influx_client.write_points(influx_data_set)
+    #print("points added")    
     
 
 
