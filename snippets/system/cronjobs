@@ -1,0 +1,20 @@
+his shorter one requires no temporary file, it is immune to multiple insertions, and it lets you change the schedule of an existing entry.
+
+Say you have these:
+
+croncmd="/home/me/myfunction myargs > /home/me/myfunction.log 2>&1"
+cronjob="0 */15 * * * $croncmd"
+
+To add it to the crontab, with no duplication:
+
+( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
+
+To remove it from the crontab whatever its current schedule:
+
+( crontab -l | grep -v -F "$croncmd" ) | crontab -
+
+Notes:
+
+    grep -F matches the string literally, as we do not want to interpret it as a regular expression
+    We also ignore the time scheduling and only look for the command. This way; the schedule can be changed without the risk of adding a new line to the crontab
+ 

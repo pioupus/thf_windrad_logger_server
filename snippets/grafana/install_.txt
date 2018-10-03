@@ -1,0 +1,15 @@
+https://github.com/fg2it/grafana-on-raspberry/wiki
+
+
+sudo apt-get install apt-transport-https curl
+curl https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
+
+echo "deb https://dl.bintray.com/fg2it/deb stretchmain" | sudo tee -a /etc/apt/sources.l
+sudo apt-get update
+sudo apt-get install grafana
+
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable grafana-server
+
+
+sudo /bin/systemctl start grafana-server

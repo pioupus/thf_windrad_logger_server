@@ -1,0 +1,17 @@
+https://gist.github.com/boseji/bb71910d43283a1b84ab200bcce43c26
+ 
+sudo apt install apt-transport-https
+echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt update
+
+sudo apt-get install influxdb
+
+
+sudo nano -c /etc/influxdb/influxdb.conf
+
+
+sudo service influxdb start
+
+
+http://influxdb-python.readthedocs.io/en/latest/include-readme.html
+sudo apt-get install python-influxdb

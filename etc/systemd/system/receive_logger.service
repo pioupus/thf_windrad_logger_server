@@ -1,0 +1,20 @@
+[Unit]
+Description= enerlyzer receiver service
+After=network.target influxdb.service
+StartLimitInterval=200
+StartLimitBurst=10
+
+
+[Service]
+Restart=always
+RestartSec=30
+EnvironmentFile=/home/enerlyzer_receiver/enerlyzer_receiver.env
+ExecStart=/home/enerlyzer_receiver/thf_windrad_logger_server/logger/start_service_receiver.sh
+WorkingDirectory=/home/enerlyzer_receiver/thf_windrad_logger_server/logger/
+StandardOutput=inherit
+StandardError=inherit
+User=enerlyzer_receiver
+
+
+[Install]
+WantedBy=multi-user.target 
