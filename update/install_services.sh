@@ -1,6 +1,6 @@
 #!/bin/bash
 TARGET=/etc/systemd/system/
-TARGET=~/test/
+#TARGET=~/test/
 
 if [ ! -d "$TARGET" ]; then
     # Control will enter here if $DIRECTORY doesn't exist.

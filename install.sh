@@ -18,10 +18,11 @@ if [ "$PASS1" = "$PASS2" ]; then
     echo INFLUX_USER_PASSWORD=`pwgen -N 1` >> /home/$USER_NAME/enerlyzer_receiver.env
 
     echo "set -a; source /home/enerlyzer_receiver/enerlyzer_receiver.env; set +a" >> /home/$USER_NAME/.bashrc
+    chown $USER_NAME /home/$USER_NAME/enerlyzer_receiver.env
 fi
 
 sudo -u enerlyzer_receiver bash << EOF
-cd /home/enerlyzer_receiver/thf_windrad_logger_server/
-update/./do_update.py
-update/./run_run_once_files.py
+cd /home/enerlyzer_receiver/thf_windrad_logger_server/update/
+./do_update.py
+./run_run_once_files.py
 EOF
