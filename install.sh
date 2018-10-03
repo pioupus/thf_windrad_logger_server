@@ -8,6 +8,7 @@ apt-get install pwgen
 adduser $USER_NAME sudo
  
 read -s -p "Enter a new password for $USER_NAME: " PASS1
+echo ""
 read -s -p "Repeat password for $USER_NAME: " PASS2
 
 if [ "$PASS1" = "$PASS2" ]; then
@@ -19,5 +20,5 @@ if [ "$PASS1" = "$PASS2" ]; then
 fi
 
 sudo -u enerlyzer_receiver bash << EOF
-./update/do_update.py
+~/thf_windrad_logger_server/update/./do_update.py
 EOF
