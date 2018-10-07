@@ -19,12 +19,18 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     msg_hex = [elem.encode("hex") for elem in msg.payload]
+    if len(msg_hex) < 10:
+        continue
     #print(msg.topic + " " + str(msg_hex))
    # print("length: "+str(len(msg_hex)))
     protobuf_dataset = protobuf_logger_pb2.dataset()
     protobuf_dataset.ParseFromString(msg.payload)
+
     #print(protobuf_dataset)
-    
+    external_current_sensor = protobuf_dataset.external_current_sensor-2.54
+    if external_current_sensor < 0:
+        external_current_sensor = 0
+        
     influx_data_set = [{
         "measurement": "powerdata",
         "time": datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f'),
@@ -62,7 +68,7 @@ def on_message(client, userdata, msg):
             
             "frequency_Hz":  protobuf_dataset.frequency_Hz,
             "power":  protobuf_dataset.power,
-            "external_current_sensor":  protobuf_dataset.external_current_sensor,
+            "external_current_sensor":  external_current_sensor,
             
             "supply_voltage":  protobuf_dataset.supply_voltage/1000.0,
             "cpu_temperature":  protobuf_dataset.cpu_temperature,
