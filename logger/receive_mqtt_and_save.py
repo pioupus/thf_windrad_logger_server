@@ -20,7 +20,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     msg_hex = [elem.encode("hex") for elem in msg.payload]
     if len(msg_hex) < 10:
-        continue
+        return
     #print(msg.topic + " " + str(msg_hex))
    # print("length: "+str(len(msg_hex)))
     protobuf_dataset = protobuf_logger_pb2.dataset()
