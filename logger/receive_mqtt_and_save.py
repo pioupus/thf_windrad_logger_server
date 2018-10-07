@@ -30,7 +30,7 @@ def on_message(client, userdata, msg):
         external_current_sensor = protobuf_dataset.external_current_sensor-2.54
         if external_current_sensor < 0:
             external_current_sensor = 0
-            
+        external_current_sensor = float(external_current_sensor)    
         influx_data_set = [{
             "measurement": "powerdata",
             "time": datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f'),
