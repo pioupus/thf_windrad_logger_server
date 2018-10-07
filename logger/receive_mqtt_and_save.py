@@ -64,7 +64,7 @@ def on_message(client, userdata, msg):
             "power":  protobuf_dataset.power,
             "external_current_sensor":  protobuf_dataset.external_current_sensor,
             
-            "supply_voltage":  protobuf_dataset.supply_voltage,
+            "supply_voltage":  protobuf_dataset.supply_voltage/1000.0,
             "cpu_temperature":  protobuf_dataset.cpu_temperature,
             "coin_cell_mv":  protobuf_dataset.coin_cell_mv,
             "energy_Wh": protobuf_dataset.energy_Wh,
