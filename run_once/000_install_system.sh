@@ -26,7 +26,7 @@ echo $MY_PASSWORD | sudo -S cp -rf $SCRIPTPATH/../etc/grafana/grafana.ini /etc/g
 echo $MY_PASSWORD | sudo -S pip install paho-mqtt
 
 mkdir /home/enerlyzer_receiver/influx_data
-chown /home/enerlyzer_receiver/influx_data
+echo $MY_PASSWORD | sudo -S chown influxdb /home/enerlyzer_receiver/influx_data
 
 
 echo $MY_PASSWORD | sudo -S systemctl daemon-reload
