@@ -4,9 +4,10 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 
 echo $MY_PASSWORD | sudo -S apt-get update
-echo $MY_PASSWORD | sudo -S apt-get -y install curl htop apt-transport-https
-
-
+echo $MY_PASSWORD | sudo -S apt-get -y install curl htop apt-transport-https software-properties-common
+echo $MY_PASSWORD | sudo -S add-apt-repository ppa:certbot/certbot
+echo $MY_PASSWORD | sudo -S apt-get update
+echo $MY_PASSWORD | sudo -S apt-get -y install python-certbot-nginx
 
 
 #install influxdb

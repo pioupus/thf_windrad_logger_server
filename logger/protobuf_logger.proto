@@ -35,4 +35,15 @@ message dataset {
     required float used_storage_percent        =  30;
     required double energy_start                = 31;
     required double energy_Wh                   = 32;
+    required float raspberry_temp_c             = 33;
+    required float raspberry_mem_free_percent   = 34;
+    
+    required bool raspberry_under_voltage               = 35;
+    required bool raspberry_frequency_capped            = 36;
+    required bool raspberry_currently_throttled         = 37;
+    required bool raspberry_under_voltage_has_occurred  = 38;
+    required bool raspberry_frequency_capped_has_occurred = 39;
+    required bool raspberry_throttling_has_occurred     = 40;
+    
+    
 }

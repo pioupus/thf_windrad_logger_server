@@ -75,7 +75,9 @@ def on_message(client, userdata, msg):
                 "coin_cell_mv":  protobuf_dataset.coin_cell_mv/1000.0,
                 "energy_Wh": protobuf_dataset.energy_Wh,
                 "energy_start": protobuf_dataset.energy_start,
-                "used_storage_percent:": protobuf_dataset.used_storage_percent
+                "raspberry_temp_c:": protobuf_dataset.raspberry_temp_c,
+                "raspberry_mem_free_percent:": protobuf_dataset.raspberry_mem_free_percent
+                
                 
             }
         }]
