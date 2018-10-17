@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='protobuf_logger.proto',
   package='enerlyzer',
   syntax='proto2',
-  serialized_pb=_b('\n\x15protobuf_logger.proto\x12\tenerlyzer\"\x88\x06\n\x07\x64\x61taset\x12\x13\n\x0blogger_time\x18\x1d \x02(\x01\x12\x16\n\x0e\x63urrent_l1_avg\x18\x01 \x02(\x02\x12\x16\n\x0e\x63urrent_l2_avg\x18\x02 \x02(\x02\x12\x16\n\x0e\x63urrent_l3_avg\x18\x03 \x02(\x02\x12\x17\n\x0fvoltage_l21_avg\x18\x04 \x02(\x02\x12\x17\n\x0fvoltage_l32_avg\x18\x05 \x02(\x02\x12\x17\n\x0fvoltage_l13_avg\x18\x06 \x02(\x02\x12\x16\n\x0e\x63urrent_l1_eff\x18\x07 \x02(\x02\x12\x16\n\x0e\x63urrent_l2_eff\x18\x08 \x02(\x02\x12\x16\n\x0e\x63urrent_l3_eff\x18\t \x02(\x02\x12\x17\n\x0fvoltage_l21_eff\x18\n \x02(\x02\x12\x17\n\x0fvoltage_l32_eff\x18\x0b \x02(\x02\x12\x17\n\x0fvoltage_l13_eff\x18\x0c \x02(\x02\x12\x16\n\x0e\x63urrent_l1_max\x18\r \x02(\x02\x12\x16\n\x0e\x63urrent_l2_max\x18\x0e \x02(\x02\x12\x16\n\x0e\x63urrent_l3_max\x18\x0f \x02(\x02\x12\x17\n\x0fvoltage_l21_max\x18\x10 \x02(\x02\x12\x17\n\x0fvoltage_l32_max\x18\x11 \x02(\x02\x12\x17\n\x0fvoltage_l13_max\x18\x12 \x02(\x02\x12\x16\n\x0etemperature_l1\x18\x13 \x02(\x02\x12\x16\n\x0etemperature_l2\x18\x14 \x02(\x02\x12\x16\n\x0etemperature_l3\x18\x15 \x02(\x02\x12\x13\n\x0bvoltage_aux\x18\x16 \x02(\x02\x12\x14\n\x0c\x66requency_Hz\x18\x17 \x02(\x02\x12\r\n\x05power\x18\x18 \x02(\x02\x12\x1f\n\x17\x65xternal_current_sensor\x18\x19 \x02(\x02\x12\x16\n\x0esupply_voltage\x18\x1a \x02(\x02\x12\x17\n\x0f\x63pu_temperature\x18\x1b \x02(\x02\x12\x14\n\x0c\x63oin_cell_mv\x18\x1c \x02(\x02\x12\x1c\n\x14used_storage_percent\x18\x1e \x02(\x02\x12\x14\n\x0c\x65nergy_start\x18\x1f \x02(\x01\x12\x11\n\tenergy_Wh\x18  \x02(\x01')
+  serialized_pb=_b('\n\x15protobuf_logger.proto\x12\tenerlyzer\"\xbc\x08\n\x07\x64\x61taset\x12\x13\n\x0blogger_time\x18\x1d \x02(\x01\x12\x16\n\x0e\x63urrent_l1_avg\x18\x01 \x02(\x02\x12\x16\n\x0e\x63urrent_l2_avg\x18\x02 \x02(\x02\x12\x16\n\x0e\x63urrent_l3_avg\x18\x03 \x02(\x02\x12\x17\n\x0fvoltage_l21_avg\x18\x04 \x02(\x02\x12\x17\n\x0fvoltage_l32_avg\x18\x05 \x02(\x02\x12\x17\n\x0fvoltage_l13_avg\x18\x06 \x02(\x02\x12\x16\n\x0e\x63urrent_l1_eff\x18\x07 \x02(\x02\x12\x16\n\x0e\x63urrent_l2_eff\x18\x08 \x02(\x02\x12\x16\n\x0e\x63urrent_l3_eff\x18\t \x02(\x02\x12\x17\n\x0fvoltage_l21_eff\x18\n \x02(\x02\x12\x17\n\x0fvoltage_l32_eff\x18\x0b \x02(\x02\x12\x17\n\x0fvoltage_l13_eff\x18\x0c \x02(\x02\x12\x16\n\x0e\x63urrent_l1_max\x18\r \x02(\x02\x12\x16\n\x0e\x63urrent_l2_max\x18\x0e \x02(\x02\x12\x16\n\x0e\x63urrent_l3_max\x18\x0f \x02(\x02\x12\x17\n\x0fvoltage_l21_max\x18\x10 \x02(\x02\x12\x17\n\x0fvoltage_l32_max\x18\x11 \x02(\x02\x12\x17\n\x0fvoltage_l13_max\x18\x12 \x02(\x02\x12\x16\n\x0etemperature_l1\x18\x13 \x02(\x02\x12\x16\n\x0etemperature_l2\x18\x14 \x02(\x02\x12\x16\n\x0etemperature_l3\x18\x15 \x02(\x02\x12\x13\n\x0bvoltage_aux\x18\x16 \x02(\x02\x12\x14\n\x0c\x66requency_Hz\x18\x17 \x02(\x02\x12\r\n\x05power\x18\x18 \x02(\x02\x12\x1f\n\x17\x65xternal_current_sensor\x18\x19 \x02(\x02\x12\x16\n\x0esupply_voltage\x18\x1a \x02(\x02\x12\x17\n\x0f\x63pu_temperature\x18\x1b \x02(\x02\x12\x14\n\x0c\x63oin_cell_mv\x18\x1c \x02(\x02\x12\x1c\n\x14used_storage_percent\x18\x1e \x02(\x02\x12\x14\n\x0c\x65nergy_start\x18\x1f \x02(\x01\x12\x11\n\tenergy_Wh\x18  \x02(\x01\x12\x18\n\x10raspberry_temp_c\x18! \x02(\x02\x12\"\n\x1araspberry_mem_free_percent\x18\" \x02(\x02\x12\x1f\n\x17raspberry_under_voltage\x18# \x02(\x08\x12\"\n\x1araspberry_frequency_capped\x18$ \x02(\x08\x12%\n\x1draspberry_currently_throttled\x18% \x02(\x08\x12,\n$raspberry_under_voltage_has_occurred\x18& \x02(\x08\x12/\n\'raspberry_frequency_capped_has_occurred\x18\' \x02(\x08\x12)\n!raspberry_throttling_has_occurred\x18( \x02(\x08')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -257,6 +257,62 @@ _DATASET = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_temp_c', full_name='enerlyzer.dataset.raspberry_temp_c', index=32,
+      number=33, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_mem_free_percent', full_name='enerlyzer.dataset.raspberry_mem_free_percent', index=33,
+      number=34, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_under_voltage', full_name='enerlyzer.dataset.raspberry_under_voltage', index=34,
+      number=35, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_frequency_capped', full_name='enerlyzer.dataset.raspberry_frequency_capped', index=35,
+      number=36, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_currently_throttled', full_name='enerlyzer.dataset.raspberry_currently_throttled', index=36,
+      number=37, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_under_voltage_has_occurred', full_name='enerlyzer.dataset.raspberry_under_voltage_has_occurred', index=37,
+      number=38, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_frequency_capped_has_occurred', full_name='enerlyzer.dataset.raspberry_frequency_capped_has_occurred', index=38,
+      number=39, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='raspberry_throttling_has_occurred', full_name='enerlyzer.dataset.raspberry_throttling_has_occurred', index=39,
+      number=40, type=8, cpp_type=7, label=2,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -270,7 +326,7 @@ _DATASET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=37,
-  serialized_end=813,
+  serialized_end=1121,
 )
 
 DESCRIPTOR.message_types_by_name['dataset'] = _DATASET
