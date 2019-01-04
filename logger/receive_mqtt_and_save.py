@@ -15,7 +15,7 @@ INFLUX_DB_NAME = "enerlyzer"
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
-    client.subscribe("enerlyzer/#")
+    client.subscribe("enerlyzer/live/pwr")
 
 def on_message(client, userdata, msg):
     msg_hex = [elem.encode("hex") for elem in msg.payload]

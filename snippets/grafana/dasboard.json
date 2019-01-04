@@ -53,6 +53,10 @@
         {
           "alias": "mcu temperature",
           "yaxis": 2
+        },
+        {
+          "alias": "raspberry temperature",
+          "yaxis": 2
         }
       ],
       "spaceLength": 10,
@@ -200,6 +204,45 @@
               {
                 "params": [
                   "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "raspberry temperature",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "linear"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "powerdata",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"value\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "raspberry_temp_c:"
                 ],
                 "type": "field"
               },
@@ -1502,7 +1545,7 @@
       }
     }
   ],
-  "refresh": "5s",
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -1541,5 +1584,5 @@
   "timezone": "",
   "title": "Wind turbine",
   "uid": "lhsZX60iz",
-  "version": 12
+  "version": 16
 }
