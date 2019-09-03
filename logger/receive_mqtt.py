@@ -30,7 +30,7 @@ mqtt_client = mqtt.Client()
 mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
 
-mqtt_publish_result = mqtt_client.publish("enerlyzer/live/pwr", "test", qos=2)
+mqtt_publish_result = mqtt_client.publish("enerlyzer/devel/pwr", "test", qos=2)
 print(mqtt_publish_result)
 if mqtt_publish_result.rc == mqtt.MQTT_ERR_SUCCESS:
     print("published successfully")

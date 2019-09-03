@@ -9,7 +9,10 @@ import protobuf_logger_pb2
 from influxdb import InfluxDBClient
 from influxdb.exceptions import InfluxDBClientError
 
+my_env = os.environ.copy()    
+
 broker="broker.hivemq.com"
+broker=my_env["MQTT_BROKER_HOST"]
 INFLUX_DB_NAME = "enerlyzer"
 
 
@@ -91,7 +94,7 @@ mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
 
 
-my_env = os.environ.copy()    
+
 influx_client = InfluxDBClient('localhost', 8086, 'influx_user', my_env["INFLUX_USER_PASSWORD"], INFLUX_DB_NAME)
 #influx_client = InfluxDBClient('localhost', 8086, 'influx_user', "", INFLUX_DB_NAME)
 
@@ -102,5 +105,6 @@ if mqtt_publish_result.rc == mqtt.MQTT_ERR_SUCCESS:
     
 if mqtt_publish_result.rc == mqtt.MQTT_ERR_NO_CONN:
     print("Not connected")    
+    mqtt_client.username_pw_set(username=my_env["MQTT_BROKER_PW"],password=my_env["MQTT_BROKER_UN"])
     mqtt_client.connect(broker, 1883, 60)
 mqtt_client.loop_forever()

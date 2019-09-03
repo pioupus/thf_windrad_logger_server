@@ -17,9 +17,21 @@ echo $MY_PASSWORD | sudo -S curl https://packagecloud.io/gpg.key | sudo apt-key 
 echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 echo "deb https://packagecloud.io/grafana/stable/debian/ stretch main" | sudo tee /etc/apt/sources.list.d/grafana.list
 
+echo $MY_PASSWORD | sudo -S apt update
+#install mosquitto
+echo $MY_PASSWORD | sudo apt-get install mosquitto mosquitto-clients
+echo $MY_PASSWORD | sudo mosquitto_passwd -c /etc/mosquitto/passwd enerlyzer_thf
+echo $MY_PASSWORD | sudo mosquitto_passwd /etc/mosquitto/passwd mqtt_local_user
+
+
+echo $MY_PASSWORD | sudo echo allow_anonymous false > /etc/mosquitto/conf.d/default.conf
+echo $MY_PASSWORD | sudo echo password_file /etc/mosquitto/passwd >> /etc/mosquitto/conf.d/default.conf
+
+
+
+
 #install python
 
-echo $MY_PASSWORD | sudo -S apt update
 echo $MY_PASSWORD | sudo -S apt-get -y install influxdb python-pip python-influxdb python-protobuf grafana
 echo $MY_PASSWORD | sudo -S cp -rf $SCRIPTPATH/../etc/influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 echo $MY_PASSWORD | sudo -S cp -rf $SCRIPTPATH/../etc/grafana/grafana.ini /etc/grafana/grafana.ini
