@@ -105,6 +105,6 @@ if mqtt_publish_result.rc == mqtt.MQTT_ERR_SUCCESS:
     
 if mqtt_publish_result.rc == mqtt.MQTT_ERR_NO_CONN:
     print("Not connected")    
-    mqtt_client.username_pw_set(username=my_env["MQTT_BROKER_PW"],password=my_env["MQTT_BROKER_UN"])
+    mqtt_client.username_pw_set(username=my_env["MQTT_BROKER_UN"],password=my_env["MQTT_BROKER_PW"])
     mqtt_client.connect(broker, 1883, 60)
 mqtt_client.loop_forever()
