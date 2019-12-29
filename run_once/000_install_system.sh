@@ -3,7 +3,7 @@
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 
-echo $MY_PASSWORD | sudo -S apt-get update
+echo sudo | sudo -S apt-get update
 echo $MY_PASSWORD | sudo -S apt-get -y install curl htop apt-transport-https software-properties-common
 echo $MY_PASSWORD | sudo -S add-apt-repository ppa:certbot/certbot
 echo $MY_PASSWORD | sudo -S apt-get update
@@ -12,16 +12,20 @@ echo $MY_PASSWORD | sudo -S apt-get -y install python-certbot-nginx
 
 #install influxdb
 echo $MY_PASSWORD | sudo -S curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
-echo $MY_PASSWORD | sudo -S curl https://packagecloud.io/gpg.key | sudo apt-key add -
+echo $MY_PASSWORD |sudo -S wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 
 echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-echo "deb https://packagecloud.io/grafana/stable/debian/ stretch main" | sudo tee /etc/apt/sources.list.d/grafana.list
+#echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+
 
 echo $MY_PASSWORD | sudo -S apt update
 #install mosquitto
 echo $MY_PASSWORD | sudo apt-get install mosquitto mosquitto-clients
 echo $MY_PASSWORD | sudo mosquitto_passwd -c /etc/mosquitto/passwd enerlyzer_thf
 echo $MY_PASSWORD | sudo mosquitto_passwd /etc/mosquitto/passwd mqtt_local_user
+echo $MY_PASSWORD | sudo mosquitto_passwd /etc/mosquitto/passwd enerlyzer_desk
 
 
 echo $MY_PASSWORD | sudo echo allow_anonymous false > /etc/mosquitto/conf.d/default.conf
